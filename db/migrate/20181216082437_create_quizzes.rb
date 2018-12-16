@@ -3,7 +3,7 @@ class CreateQuizzes < ActiveRecord::Migration[5.2]
     create_table :quizzes do |t|
       t.integer :score
       t.integer :sticker_id
-      t.integer :qstory_id
+      t.integer :story_id
 
       t.timestamps
     end
