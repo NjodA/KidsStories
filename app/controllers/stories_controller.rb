@@ -1,4 +1,6 @@
 class StoriesController < ApplicationController
+  skip_before_action :verify_authenticity_token
+  # 422 Unprocessable Entity (add this line ^)
   def index
     if params[:level]
       @stories = Story.where(level: params[:level])
@@ -12,6 +14,11 @@ class StoriesController < ApplicationController
   end
 
   def new
+  end
+
+  def create
+    story = Story.create(title: params["title"], body: params["body"], image: params["image"], min: params["min"],level: params["level"])
+    render json: story
   end
 
   def edit
