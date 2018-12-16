@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2018_12_16_093414) do
   create_table "quizzes", force: :cascade do |t|
     t.integer "score"
     t.integer "sticker_id"
-    t.integer "story_id"
+    t.integer "qstory_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
