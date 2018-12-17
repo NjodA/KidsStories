@@ -9,14 +9,15 @@
 <% @quiz.questions.each do |q| %>
 <%= q.question  %> <br>
 
-<button class="op<%= c %> answer"  ><%= q.op1 %> </button>
-<button class="op<%= c %> answer" ><%= q.op2 %> </button>
-<button class="op<%= c %> answer" ><%= q.op3 %></button>
-<p class="answer<%= c %>" hidden><%= q.answer %></p>
+<button class="op<%= c %>"  ><%= q.op1 %> </button>
+<button class="op<%= c %>" ><%= q.op2 %> </button>
+<button class="op<%= c %>" ><%= q.op3 %></button>
+<p class="answer<%= c %> answer" hidden><%= q.answer %></p>
 
 <%c+=1%>
 <br>
 <% end %>
 <p id="counter" hidden><%= @quiz.id %></p>
 <p id="sticker" hidden><%= @quiz.id %></p>
-</div>
+
+<button class="complete-quiz">Complete Quiz</button>

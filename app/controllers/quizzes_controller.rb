@@ -21,4 +21,9 @@ class QuizzesController < ApplicationController
 
   def destory
   end
+
+  def complete
+    current_user.stickers << Quiz.find_by(id: params[:id]).sticker
+    render json: { message: "Success"}
+  end
 end

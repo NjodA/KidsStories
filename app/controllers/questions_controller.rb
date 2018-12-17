@@ -16,9 +16,10 @@ class QuestionsController < ApplicationController
     render json: question
   end
 def checkAnswers
- 
+  # if right answers selected == question.lenght
+  # add sticker_id to current_user
+  # else show  msg re-submit quiz
 
-   
 
 end
   def edit
