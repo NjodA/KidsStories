@@ -1,11 +1,15 @@
- <%= @story.image %> <br>
- <%= @story.title %> <br>
- <%= @story.body %> <br>
- <%= @story.min %>
- <%= @story.quiz %>
+ <div class=down>
+<br>
+<br>
+ 
+ <h1><%= @story.title %></h1> <br>
+ <img src=<%= @story.image %>> <br>
+  <%= @story.min %>
+ <p><%= @story.body %> <br></p>
 
- <% @story.quiz.questions.each do |q| %>
-    <p><%= q.question %></p>
- <% end %>
 
-<%= link_to 'Done', @story.quiz %>
+
+
+
+<%= link_to 'ابدأ التحدي',  @story.quiz %>
+</div>
