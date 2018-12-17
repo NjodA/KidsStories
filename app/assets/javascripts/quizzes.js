@@ -60,31 +60,58 @@ $(document).ready(function () {
         } else {
             swal("try again!", "You clicked the button!", "error");
         }
-
     }
 
+    $(".complete-quiz").on("click", function () {
+        if ($(".correct").length === $(".answer").length) {
+            fetch(location.pathname + "/complete", {
+                method: "POST"
+            }).then(r => r.json()).then(function (data) {
+                console.log(data);
+            })
+        }
+    });
 
-    console.log($("button"));
-    console.log($("p"));
-    $(".op1").click(function () {
-        //     console.log("button");
-        // console.log("button");
-        button = this.innerText;
-        console.log("*******", button);
-        checkAnswer(answer1);
+    $(".op1").on("click", function () {
+        $(this).addClass("selected");
+        if ($(this).text().trim() === answer1.innerText) {
+            $(this).addClass("correct")
+        }
     })
     $(".op2").on("click", function () {
-        // console.log("button");
-        // console.log("button");
-        button = this.innerText;
-        checkAnswer(answer2);
+        $(this).addClass("selected");
+        if ($(this).text().trim() === answer2.innerText) {
+            $(this).addClass("correct")
+        }
     })
     $(".op3").on("click", function () {
-        // console.log("button");
-        // console.log("button");
-        button = this.innerHTML;
-        checkAnswer(answer3);
+        $(this).addClass("selected");
+        if ($(this).text().trim() === answer3.innerText) {
+            $(this).addClass("correct")
+        }
     })
+    // console.log($("button"));
+    // console.log($("p"));
+    // $(".op1").click(function () {
+
+    //     //     console.log("button");
+    //     // console.log("button");
+    //     button = this.innerText;
+    //     console.log("*******", button);
+    //     checkAnswer(answer1);
+    // })
+    // $(".op2").on("click", function () {
+    //     // console.log("button");
+    //     // console.log("button");
+    //     button = this.innerText;
+    //     checkAnswer(answer2);
+    // })
+    // $(".op3").on("click", function () {
+    //     // console.log("button");
+    //     // console.log("button");
+    //     button = this.innerHTML;
+    //     checkAnswer(answer3);
+    // })
 
     function responseToJSON(response) {
         return response.json();
