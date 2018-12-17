@@ -1,4 +1,5 @@
 class QuizesController < ApplicationController
+  
   def index
   end
 
@@ -7,7 +8,7 @@ class QuizesController < ApplicationController
 
   def new
   end
-
+  
   def edit
   end
 

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-resources :stories , :quizes , :questions , :stickers
+resources :stories , :quizzes , :questions , :stickers
   devise_for :users
+  get "/stories/levels/:level", to: "stories#index"
   root "pages#home"
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

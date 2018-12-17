@@ -1,0 +1,17 @@
+<h1>Quize </h1>
+
+<%= @quiz.id %> <br>
+<% c=1 %>
+<% @quiz.questions.each do |q| %>
+<%= q.question  %> <br>
+
+<button class="op<%= c %>"  ><%= q.op1 %> </button>
+<button class="op<%= c %>" ><%= q.op2 %> </button>
+<button class="op<%= c %>" ><%= q.op3 %></button>
+<p class="answer<%= c %>" hidden><%= q.answer %></p>
+
+<%c+=1%>
+
+<% end %>
+<p id="counter" hidden><%= @quiz.id %></p>
+<p id="sticker" hidden><%= @quiz.id %></p>
