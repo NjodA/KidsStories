@@ -5,7 +5,7 @@ class QuizzesController < ApplicationController
   end
 
   def show
-    @quize = Quiz.find_by(id: params[:id])
+    @quiz = Quiz.find_by(id: params[:id])
   end
 
   def new

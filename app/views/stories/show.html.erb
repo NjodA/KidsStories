@@ -1,2 +1,11 @@
-<h1>Stories#show</h1>
-<p>Find me in app/views/stories/show.html.erb</p>
+ <%= @story.image %> <br>
+ <%= @story.title %> <br>
+ <%= @story.body %> <br>
+ <%= @story.min %>
+ <%= @story.quiz %>
+
+ <% @story.quiz.questions.each do |q| %>
+    <p><%= q.question %></p>
+ <% end %>
+
+<%= link_to 'Done', @story.quiz %>
