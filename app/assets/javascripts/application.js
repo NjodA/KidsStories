@@ -15,3 +15,23 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+function login() {
+  location.href = `/users/sign_in`;
+}
+function level1(){
+    // console.log(this.id);
+    location.href = `/stories/levels/${1}`;   
+}
+function level2(){
+    // console.log(this.id);
+    location.href = `/stories/levels/${2}`;   
+}
+function level3(){
+    // console.log(this.id);
+    location.href = `/stories/levels/${3}`;   
+}
+function image(){
+    // console.log(this.id);
+    const image=document.querySelector(".img");
+    location.href = `/stories/${image.id}`;   
+}

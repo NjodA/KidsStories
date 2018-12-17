@@ -8,13 +8,7 @@
 </head>
     
   <body>
-    <nav class="nava">
-       <button type="button" onclick="">دخول</button>
-
-         <%= image_tag "pic1.png" %>
-
-
-    </nav>
+    
     <div class="devise">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
@@ -25,9 +19,9 @@
     <div class="landing-page">
    
     <ul>
-                     <li> <button type="button" onclick="">المستوى الأول: ٣ - ٥ سنوات </button></li>
-                     <li> <button type="button" onclick="">المستوى الثاني: ٥ - ٨ سنوات </button></li>
-                     <li> <button type="button" onclick="">المستوى الثالث: ٨ - ١٠ سنوات</button></li>
+                     <li> <button type="button" onclick="level1()">المستوى الأول: ٣ - ٥ سنوات </button></li>
+                     <li> <button type="button" onclick="level2()">المستوى الثاني: ٥ - ٨ سنوات </button></li>
+                     <li> <button type="button" onclick="level3()">المستوى الثالث: ٨ - ١٠ سنوات</button></li>
              </ul>
 
     </div>
@@ -39,6 +33,7 @@
     <section>
       <img src="https://png.pngtree.com/element_origin_min_pic/17/03/20/44ad223d7b567838c4282f762b250836.jpg"/>
       <h3> لنقرأ معاً</h3>
+       
     </section>
 </body>
 </html>
