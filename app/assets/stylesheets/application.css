@@ -1,15 +1,106 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+    font-family: 'Tajawal', sans-serif;
+
+  margin: 0;
+  /* padding-top: 120px; */
+}
+.devise {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.nava {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #126d79;
+  height: 155px;
+  padding: 0 10px;
+  width: 100%;
+  color: #f8f8ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Tajawal', sans-serif;
+
+}
+.nava button{
+margin-left:1300px;
+background-color: white;
+font-size: 20px;
+}
+
+nav img {
+  width: 240px;
+  height: 240px;
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  margin-left: -150px;
+}
+
+nav a {
+  color: #f8f8ff;
+  margin-left: 20px;
+}
+
+.landing-page {
+  background-attachment: fixed;
+  background-image: url(https://clip2art.com/images/library-clipart-child-book-20.jpg);
+  background-size: 25%;
+  background-repeat: repeat;
+  background-position: center;
+  height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Tajawal', sans-serif;
+}
+
+section {
+  width: 100%;
+  padding: 50px 10%;
+}
+
+
+img {
+  width: 550px;
+height:500px;
+}
+
+
+
+.landing-page button{
+   width:500px;
+   background-color:#126d79c9; /* Green */
+  border:  2px solid #336886;
+  /* opacity: 0.6; */
+  cursor:pointer;
+  height: 60px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 26px;
+  border-radius: 12px;
+  /* position: absolute; */
+  
+}
+
+.landing-page button:hover {opacity: 1}
+
+footer{
+    background-color: #126d79;
+    height: 100px;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Tajawal', sans-serif;
+
+}

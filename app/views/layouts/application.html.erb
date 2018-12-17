@@ -4,14 +4,53 @@
     <title>KidsStories</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link href="https://fonts.googleapis.com/css?family=Tajawal" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-  <p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+    <nav class="nava">
+       <button type="button" onclick="">دخول</button>
+
+         <%= image_tag "pic1.png" %>
+
+
+    </nav>
+    <div class="devise">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
+ <br>
+    <br>
+    <br>
+    <div class="landing-page">
+   
+    <ul>
+                     <li> <button type="button" onclick="">المستوى الأول: ٣ - ٥ سنوات </button></li>
+                     <li> <button type="button" onclick="">المستوى الثاني: ٥ - ٨ سنوات </button></li>
+                     <li> <button type="button" onclick="">المستوى الثالث: ٨ - ١٠ سنوات</button></li>
+             </ul>
+
+    </div>
+    <section>
+      <img src="https://us.123rf.com/450wm/tigatelu/tigatelu1502/tigatelu150200041/36776747-stock-vector-cartoon-kids-reading-book.jpg?ver=6
+"/>
+      <h3>القراءة غذاء الروح و العقل </h3>
+    </section>
+    <section>
+      <img src="https://png.pngtree.com/element_origin_min_pic/17/03/20/44ad223d7b567838c4282f762b250836.jpg"/>
+      <h3> لنقرأ معاً</h3>
+    </section>
     <%= yield %>
   </body>
+  <footer>
+&copy; 2018
+  </footer>
 </html>
+
+
+
+
