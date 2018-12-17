@@ -105,7 +105,7 @@ function addNewSticker(image) {
 }
 function addNewQuiz(score, sticker_id, story_id) {
     let params = { score: score, sticker_id: sticker_id, story_id: story_id};
-    fetch("/quizes", {
+    fetch("/quizzes", {
         method: "POST",
         headers: {
             "content-Type": "application/json",
