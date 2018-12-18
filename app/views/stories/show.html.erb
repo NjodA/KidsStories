@@ -1,7 +1,7 @@
- <div class=down>
+ <div class="down ">
 <br>
 <br>
- 
+
  <h1><%= @story.title %></h1> <br>
  <img src=<%= @story.image %>> <br>
   <%= @story.min %>
@@ -10,6 +10,9 @@
 
 
 
-
+<%= form_for @story do |f| %>
+    <%= f.file_field :audio %>
+    <%= f.submit "Add Audio"%>
+<% end %>
 <%= link_to 'ابدأ التحدي',  @story.quiz %>
 </div>
