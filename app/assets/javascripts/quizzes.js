@@ -58,67 +58,69 @@ $(document).ready(function() {
       swal("try again!", "You clicked the button!", "error");
     }
   }
-
-  $(".op1").live("click", function() {
-    $(this).addClass("selected");
-    if (
-      $(this)
-        .text()
-        .trim() === answer1.innerText
-    ) {
-      $(this).addClass("correct");
+  const opt = $(".op1");
+  while (!opt) {
+    $(".op1").on("click", function() {
+      $(this).addClass("selected");
+      if (
+        $(this)
+          .text()
+          .trim() === answer1.innerText
+      ) {
+        $(this).addClass("correct");
+      }
+      disable("op1");
+    });
+    $(".op2").on("click", function() {
+      $(this).addClass("selected");
+      if (
+        $(this)
+          .text()
+          .trim() === answer2.innerText
+      ) {
+        $(this).addClass("correct");
+      }
+      disable("op2");
+    });
+    $(".op3").on("click", function() {
+      $(this).addClass("selected");
+      // console.log(answer3.innerHTML);
+      if (
+        $(this)
+          .text()
+          .trim() === answer3.innerText
+      ) {
+        $(this).addClass("correct");
+      }
+      disable("op3");
+    });
+    function disable(c) {
+      const options = document.querySelectorAll(`.${c}`);
+      options.forEach(function(option) {
+        option.disabled = true;
+      });
     }
-    disable("op1");
-  });
-  $(".op2").on("click", function() {
-    $(this).addClass("selected");
-    if (
-      $(this)
-        .text()
-        .trim() === answer2.innerText
-    ) {
-      $(this).addClass("correct");
-    }
-    disable("op2");
-  });
-  $(".op3").on("click", function() {
-    $(this).addClass("selected");
-    // console.log(answer3.innerHTML);
-    if (
-      $(this)
-        .text()
-        .trim() === answer3.innerText
-    ) {
-      $(this).addClass("correct");
-    }
-    disable("op3");
-  });
-  function disable(c) {
-    const options = document.querySelectorAll(`.${c}`);
-    options.forEach(function(option) {
-      option.disabled = true;
+    $(".complete-quiz").on("click", function() {
+      if ($(".correct").length === $(".answers").length) {
+        swal({
+          title: "Sweet!",
+          text: "Modal with a custom image.",
+          imageUrl: "https://unsplash.it/400/200",
+          imageWidth: 400,
+          imageHeight: 200,
+          imageAlt: "Custom image",
+          animation: false
+        });
+        fetch(location.pathname + "/complete", {
+          method: "POST"
+        })
+          .then(r => r.json())
+          .then(function(data) {
+            console.log(data);
+          });
+      }
     });
   }
-  $(".complete-quiz").on("click", function() {
-    if ($(".correct").length === $(".answers").length) {
-      swal({
-        title: "Sweet!",
-        text: "Modal with a custom image.",
-        imageUrl: "https://unsplash.it/400/200",
-        imageWidth: 400,
-        imageHeight: 200,
-        imageAlt: "Custom image",
-        animation: false
-      });
-      fetch(location.pathname + "/complete", {
-        method: "POST"
-      })
-        .then(r => r.json())
-        .then(function(data) {
-          console.log(data);
-        });
-    }
-  });
   // console.log($("button"));
   // console.log($("p"));
   // $(".op1").click(function () {
