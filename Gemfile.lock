@@ -237,11 +237,8 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rails (~> 5.2.1)
-<<<<<<< HEAD
-  rest-client (~> 2.0)
-=======
   rails-ujs (~> 0.1.0)
->>>>>>> fadc4f1e9cdc85745c7d03a2f58104517dba2b83
+  rest-client (~> 2.0)
   sass-rails (~> 5.0)
   selenium-webdriver
   turbolinks (~> 5)

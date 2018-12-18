@@ -1,14 +1,28 @@
- <div class="flex1">
+ <br>
+  <br>
+
+ <div class="flex1 ">
 
 
-<% arr=["blue","darkPink","purple","orange","lightBlue","yellow"] %>
+<% arr=["darkPink","purple","orange","lightBlue","yellow"] %>
 <%c=0 %>
-<style>
 <% @stories.each do |story| %>
-<div class="panel <%= arr[c] %>" style=.panel:hover{background-image: url(<%= story.image %>)}>
+
+<div class="panel" onclick="image()" id=<%= story.id %> style="background-image: url(<%= story.image %>)">
+<div class="bg <%= arr[c] %>">
+<br>
+<br>
+<br>
+<br>
+<br>
     <h3> <%= story.title %> </h3>
-    <img class="img1" id=<%=story.id%> onclick="image()" src= >
+    <!-- <img class="img1" id=<%=story.id%> onclick="image()" src= > -->
     </div>
+    </div>
+
 <%c+=1 %>
+<% if arr.length==c %>
+<%c=0 %>
+<% end %>
 <% end %>
 </div>

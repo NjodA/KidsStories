@@ -6,13 +6,15 @@
  <img src=<%= @story.image %>> <br>
   <%= @story.min %>
  <p><%= @story.body %> <br></p>
+<%#= cl_image_tag @story.audio %>
+<%= audio_tag @story.audio, controls: true%>
 
-
-
-
+<% if current_user.is_admin==true %>
 <%= form_for @story do |f| %>
     <%= f.file_field :audio %>
     <%= f.submit "Add Audio"%>
+    <% end %>
 <% end %>
-<%= link_to 'ابدأ التحدي',  @story.quiz %>
+<br>
+<button><%= link_to 'ابدأ التحدي',  @story.quiz %></button>
 </div>

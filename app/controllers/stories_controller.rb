@@ -3,8 +3,8 @@ class StoriesController < ApplicationController
   # 422 Unprocessable Entity (add this line ^)
   def index
     if params[:level]
-      @stories = Story.where(level: params[:level])
-    else 
+      @stories = Story.where(level: params[:level].to_i)
+    else
       @stories = Story.all
     end
   end
@@ -14,11 +14,10 @@ class StoriesController < ApplicationController
   end
 
   def new
-
   end
 
   def create
-    story = Story.create(title: params["title"], body: params["body"], image: params["image"], min: params["min"],level: params["level"],audio: params["audio"])
+    story = Story.create(title: params["title"], body: params["body"], image: params["image"], min: params["min"], level: params["level"], audio: params["audio"])
     render json: story
   end
 
@@ -26,7 +25,9 @@ class StoriesController < ApplicationController
   end
 
   def update
-
+    story = Story.find_by id: params[:id]
+    story.update audio: params["story"]["audio"]
+    redirect_to story
   end
 
   def destory

@@ -21,7 +21,7 @@
    <header>
 
   
-   <!--<nav class="nava">-->
+<nav class="nava">
   
       <ul>
  <%if user_signed_in? %>
@@ -33,20 +33,20 @@
               <% end %>
 </ul>
 
-         <%#= image_tag "pic1.png" %>
-    
+         <%= image_tag "pic1.png" %>
+    </nav>
    </header>
     <div class="devise">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
     </div>
     <%= yield %>
-  </body>
-  <!--
   <footer>
 &copy; 2018
   </footer>
-  -->
+ 
+  </body>
+ 
 </html>
 
 
