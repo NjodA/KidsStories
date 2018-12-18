@@ -4,14 +4,39 @@
     <title>KidsStories</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+<link href="https://fonts.googleapis.com/css?family=Tajawal" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <%# <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script> %>
   </head>
 
   <body>
-  <p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+   <header>
+   <nav class="nava">
+      <button type="button" onclick="login()">دخول</button>
+
+         <%= image_tag "pic1.png" %>
+
+
+    </nav>
+   </header>
+    <div class="devise">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
+    <a><%= link_to "Log in ", new_user_session_path %></a>
     <%= yield %>
   </body>
+  <footer>
+&copy; 2018
+  </footer>
 </html>
+
+
+
+

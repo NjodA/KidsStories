@@ -1,0 +1,23 @@
+ <div class=down>
+<br>
+<br>
+ 
+<h1>أجب جميع الأسئلة لتحصل على الملصق </h1>
+
+
+<% c=1 %>
+<% @quiz.questions.each do |q| %>
+<%= q.question  %> <br>
+
+<button class="op<%= c %>"  ><%= q.op1 %> </button>
+<button class="op<%= c %>" ><%= q.op2 %> </button>
+<button class="op<%= c %>" ><%= q.op3 %></button>
+<p class="answer<%= c %> answer" hidden><%= q.answer %></p>
+
+<%c+=1%>
+<br>
+<% end %>
+<p id="counter" hidden><%= @quiz.id %></p>
+<p id="sticker" hidden><%= @quiz.id %></p>
+
+<button class="complete-quiz">Complete Quiz</button>

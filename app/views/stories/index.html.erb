@@ -1,2 +1,9 @@
-<h1>Stories#index</h1>
-<p>Find me in app/views/stories/index.html.erb</p>
+
+
+
+
+<% @stories.each do |story| %>
+     <%= story.title %>
+    <img class="img" id=<%=story.id%> onclick="image()" src=<%= story.image %> >
+
+<% end %>

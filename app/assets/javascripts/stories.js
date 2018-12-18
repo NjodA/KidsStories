@@ -17,6 +17,7 @@ function turnResponseIntoObject(responce) {
     return responce.json();
 }
 function level() {
+    arr = [];
     const questions = document.querySelector("#questions");
     while (questions.firstChild) {
         questions.removeChild(questions.firstChild);
@@ -47,6 +48,9 @@ function level() {
         var op3 = document.createElement("input");
         var br = document.createElement("br");
         op3.type = "text";
+        var op4 = document.createElement("input");
+        var br = document.createElement("br");
+        op4.type = "text";
         q.setAttribute("id", "q" + i);
         q.setAttribute("placeholder", "q" + i + 1);
         op1.setAttribute("id", "op1" + i);
@@ -55,18 +59,21 @@ function level() {
         op2.setAttribute("placeholder", "op2");
         op3.setAttribute("id", "op3" + i);
         op3.setAttribute("placeholder", "op3");
+        op4.setAttribute("id", "op4" + i);
+        op4.setAttribute("placeholder", "Answer");
         questions.appendChild(q);
-        questions.appendChild(br);
         questions.appendChild(op1);
         questions.appendChild(op2);
         questions.appendChild(op3);
+        questions.appendChild(op4);
         questions.appendChild(br);
         var question = document.querySelector(`#${"q" + i}`);
         var option1 = document.querySelector(`#${"op1" + i}`);
         var option2 = document.querySelector(`#${"op2" + i}`);
         var option3 = document.querySelector(`#${"op3" + i}`);
+        var option4 = document.querySelector(`#${"op4" + i}`);
         console.log(option1);
-        arr.push({ question: question, option1: option1, option2: option2, option3: option3 });
+        arr.push({ question: question, option1: option1, option2: option2, option3: option3, option4: option4 });
     }
 }
 
@@ -84,7 +91,7 @@ function addNewStory(title, body, image, min, level,audio) {
         .then(data => {
             console.log(data);
             const sticker = document.querySelector("#sticker").value;
-            storyID=data.id;
+            storyID = data.id;
             addNewSticker(sticker);
         });
 }
@@ -104,8 +111,8 @@ function addNewSticker(image) {
         });
 }
 function addNewQuiz(score, sticker_id, story_id) {
-    let params = { score: score, sticker_id: sticker_id, story_id: story_id};
-    fetch("/quizes", {
+    let params = { score: score, sticker_id: sticker_id, story_id: story_id };
+    fetch("/quizzes", {
         method: "POST",
         headers: {
             "content-Type": "application/json",
@@ -114,15 +121,15 @@ function addNewQuiz(score, sticker_id, story_id) {
         body: JSON.stringify(params)
     }).then(responseToJson)
         .then(data => {
-            console.log(data);
+            console.log(arr);
             for (i = 0; i < arr.length; i++) {
-                addNewQuestions(data.id,arr[i].question.value ,arr[i].option1.value, arr[i].option2.value, arr[i].option3.value);
+                addNewQuestions(data.id, arr[i].question.value, arr[i].option1.value, arr[i].option2.value, arr[i].option3.value, arr[i].option4.value);
             }
             // location.href = `/recipes/${data.id}`;
         });
 }
-function addNewQuestions(quiz_id,qustion, op1, op2, op3) {
-    let params = { quiz_id: quiz_id,question: qustion, op1: op1, op2: op2, op3: op3 };
+function addNewQuestions(quiz_id, qustion, op1, op2, op3, op4) {
+    let params = { quiz_id: quiz_id, question: qustion, op1: op1, op2: op2, op3: op3, op4: op4 };
     fetch("/questions", {
         method: "POST",
         headers: {
@@ -132,7 +139,8 @@ function addNewQuestions(quiz_id,qustion, op1, op2, op3) {
         body: JSON.stringify(params)
     }).then(responseToJson)
         .then(data => {
-console.log(data);
+            console.log(data);
+            location.href = `/stories/${storyID}`;
         });
 }
 window.onload = function () {
@@ -144,12 +152,12 @@ window.onload = function () {
             const title = document.querySelector("#title").value;
             const image = document.querySelector("#image").value;
             const time = document.querySelector("#time").value;
-            const audio = document.querySelector("#audio").value;
+
             const body = document.querySelector("#body").value;
             lengthstr = length.toString();
-            addNewStory(title, body, image, time, lengthstr,audio);
-            
-            
+            addNewStory(title, body, image, time, lengthstr);
+
+
         })
     }
 }

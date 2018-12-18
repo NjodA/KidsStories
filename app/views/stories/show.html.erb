@@ -1,2 +1,15 @@
-<h1>Stories#show</h1>
-<p>Find me in app/views/stories/show.html.erb</p>
+ <div class=down>
+<br>
+<br>
+ 
+ <h1><%= @story.title %></h1> <br>
+ <img src=<%= @story.image %>> <br>
+  <%= @story.min %>
+ <p><%= @story.body %> <br></p>
+
+
+
+
+
+<%= link_to 'ابدأ التحدي',  @story.quiz %>
+</div>
