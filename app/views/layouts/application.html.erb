@@ -16,11 +16,20 @@
   </head>
 
   <body>
-   
+   <header>
+   <nav class="nava">
+      <button type="button" onclick="login()">دخول</button>
+
+         <%= image_tag "pic1.png" %>
+
+
+    </nav>
+   </header>
     <div class="devise">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
     </div>
+    <a><%= link_to "Log in ", new_user_session_path %></a>
     <%= yield %>
   </body>
   <footer>

@@ -78,8 +78,8 @@ function level() {
 }
 
 let storyID;
-function addNewStory(title, body, image, min, level) {
-    let params = { title: title, body: body, image: image, min: min, level: level };
+function addNewStory(title, body, image, min, level,audio) {
+    let params = { title: title, body: body, image: image, min: min, level: level ,audio: audio};
     fetch("/stories", {
         method: "POST",
         headers: {
