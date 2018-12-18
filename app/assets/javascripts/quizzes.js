@@ -59,7 +59,7 @@ $(document).ready(function() {
     }
   }
 
-  $(".op1").on("click", function() {
+  $(".op1").live("click", function() {
     $(this).addClass("selected");
     if (
       $(this)
