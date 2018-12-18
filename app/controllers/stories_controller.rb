@@ -8,10 +8,11 @@ class StoriesController < ApplicationController
   end
 
   def new
+
   end
 
   def create
-    story = Story.create(title: params["title"], body: params["body"], image: params["image"], min: params["min"],level: params["level"])
+    story = Story.create(title: params["title"], body: params["body"], image: params["image"], min: params["min"],level: params["level"],audio: params["audio"])
     render json: story
   end
 

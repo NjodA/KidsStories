@@ -71,8 +71,8 @@ function level() {
 }
 
 let storyID;
-function addNewStory(title, body, image, min, level) {
-    let params = { title: title, body: body, image: image, min: min, level: level };
+function addNewStory(title, body, image, min, level,audio) {
+    let params = { title: title, body: body, image: image, min: min, level: level ,audio: audio};
     fetch("/stories", {
         method: "POST",
         headers: {
@@ -144,10 +144,10 @@ window.onload = function () {
             const title = document.querySelector("#title").value;
             const image = document.querySelector("#image").value;
             const time = document.querySelector("#time").value;
-           
+            const audio = document.querySelector("#audio").value;
             const body = document.querySelector("#body").value;
             lengthstr = length.toString();
-            addNewStory(title, body, image, time, lengthstr);
+            addNewStory(title, body, image, time, lengthstr,audio);
             
             
         })
