@@ -8,11 +8,12 @@
  <p><%= @story.body %> <br></p>
 <%#= cl_image_tag @story.audio %>
 <%= audio_tag @story.audio, controls: true%>
-
+<% if user_signed_in? %>
 <% if current_user.is_admin==true %>
 <%= form_for @story do |f| %>
     <%= f.file_field :audio %>
     <%= f.submit "Add Audio"%>
+    <% end %>
     <% end %>
 <% end %>
 <br>

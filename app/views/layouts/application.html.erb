@@ -25,11 +25,15 @@
   
       <ul>
  <%if user_signed_in? %>
-                <li><a><%= link_to "الملف الشخصي ", user_path(current_user) %></a></li>
+
+ <li><a><%= link_to "الملف الشخصي ", user_path(current_user) %></a></li>
+    
                 <li><a><%= link_to "تسجيل خروج ", destroy_user_session_path, method: :delete %></a></li>
+            
               <% else %>
-                <li><a><%= link_to "دخول ", new_user_session_path %></a></li>
-                <li><a><%= link_to " تسجيل جديد ", new_user_registration_path %></a></li>
+                
+                 <button onclick=login()>دخول</button>
+          
               <% end %>
 </ul>
 

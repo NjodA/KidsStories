@@ -38,3 +38,9 @@ const image=document.querySelector(".panel");
 function refresh(){
     location.reload();
 }
+function profile(){
+    location.href = `/users/profile`;
+}
+function logOut(){
+    
+}
