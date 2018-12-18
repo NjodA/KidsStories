@@ -60,6 +60,7 @@ $(document).ready(function() {
   }
   const opt = $(".op1");
   while (!opt) {
+    opt = $(".op1");
     $(".op1").on("click", function() {
       $(this).addClass("selected");
       if (
