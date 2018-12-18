@@ -4,8 +4,8 @@
 
  <h1><%= @story.title %></h1> <br>
  <img src=<%= @story.image %>> <br>
-  <%= @story.min %>
- <p><%= @story.body %> <br></p>
+دقائق للقراءة <%= @story.min %>
+ <p id"story"><%= @story.body %> <br></p>
 <%#= cl_image_tag @story.audio %>
 <%= audio_tag @story.audio, controls: true%>
 <% if user_signed_in? %>
