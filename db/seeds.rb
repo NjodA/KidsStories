@@ -5,6 +5,16 @@ Question.destroy_all
 Quiz.destroy_all
 
 user = User.create! :name => "admin", :email => "admin@gmail.com", :password => "123123", :password_confirmation => "123123", :is_admin => true
+
+# user1 = User.create(...)
+# user2 = User.create(...)
+#
+# story1 = Story.create(..)
+# quiz1 = Quiz.create(..., story_id: story1.id)
+# reading1 = Reading.create(..., user_id: user1.id, story_id: story1.id)
+# question1 = Question.create(..., quiz_id: quiz1.id)
+
+
 # table - readings
 # model - Reading
 # route - get "/stories/:id/finish", to: "stories#finish"
