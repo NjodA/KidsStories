@@ -25,9 +25,12 @@
   
       <ul>
  <%if user_signed_in? %>
+<%if current_user.is_admin==true %>
+  <li><%= link_to "إضافة قصة ", new_story_path %></li>
+ <% else %>
+  <li><%= link_to "الملف الشخصي ", user_path(current_user) %></li>
 
- <li><%= link_to "الملف الشخصي ", user_path(current_user) %></li>
-
+<% end %>
   <li><%= link_to "تسجيل خروج ", destroy_user_session_path, method: :delete %></li>
             
   <% else %>

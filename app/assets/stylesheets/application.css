@@ -189,7 +189,7 @@ footer {
   text-align: center;
 }
 .answer {
-  width: 200px;
+  min-لهف width: 200px;
 }
 .flex h3 {
   font-size: 44px;
@@ -236,7 +236,6 @@ h2 {
   font-size: 22px;
   font-family: "Tajawal", sans-serif;
   color: #126d79;
-
 }
 .field {
   font-size: 25px;
@@ -265,6 +264,9 @@ h2 {
   width: 200px;
   height: 200px;
 }
-h7{
-  color:red;
+h7 {
+  color: red;
+}
+h1 {
+  color: #126d79;
 }

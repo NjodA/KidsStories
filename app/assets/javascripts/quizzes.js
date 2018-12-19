@@ -113,7 +113,11 @@ $(document).on("turbolinks:load", function () {
         });
     } else {
       
-        swal("أعد المحاولة", "", "error");
+        swal({
+          text: "أعد المحاولة",
+          icon:"error",
+          button:"تم"
+        })
      
     }
   });
