@@ -1,14 +1,31 @@
  <br>
   <br>
 
- <div class="flex1 ">
+ <%# <div class="flex1 "> %>
 
 
 <% arr=["darkPink","purple","orange","lightBlue","yellow"] %>
 <%c=0 %>
+<%i=0 %>
 <% @stories.each do |story| %>
+<<<<<<< HEAD
 <%= link_to story, class: "panel-link" do %>
 <div class="panel" id=<%= story.id %> style="background-image: url(<%= story.image %>)">
+=======
+<% if i==0||4 %>
+<div class="flex1">
+
+<% else %>
+
+</div>
+<% end %>
+<%c+=1 %>
+<% if arr.length==c %>
+<%i=1 %>
+<%c=0 %>
+<% end %>
+<div class="panel" onclick="image()" id=<%= story.id %> style="background-image: url(<%= story.image %>)">
+>>>>>>> 62f950ac07432ff332889c0bfecc76a9dbf4295e
 <div class="bg <%= arr[c] %>">
 
 <br>
@@ -16,15 +33,17 @@
 <br>
 <br>
 <br>
+
     <h3> <%= story.title %> </h3>
     <!-- <img class="img1" id=<%=story.id%> onclick="image()" src= > -->
     </div>
     </div>
 
-<%c+=1 %>
-<% if arr.length==c %>
-<%c=0 %>
+
 <% end %>
-<% end %>
+<<<<<<< HEAD
 <% end %>
 </div>
+=======
+<%# </div> %>
+>>>>>>> 62f950ac07432ff332889c0bfecc76a9dbf4295e
