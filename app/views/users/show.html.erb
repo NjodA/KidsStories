@@ -1,0 +1,12 @@
+   <div class=down>
+   <br>
+    <div class="flex1">
+
+
+<h2> مرحباً   <%= @user.name %></h2>
+
+<% @user.stickers.each do |s| %>
+ <img src=<%=s.image %> >
+<% end %>
+</div>
+</div>

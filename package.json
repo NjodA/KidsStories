@@ -1,5 +1,7 @@
 {
   "name": "kidsStories",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "sweetalert2": "^7.32.4"
+  }
 }
