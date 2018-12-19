@@ -62,9 +62,7 @@ $(document).on("turbolinks:load", function() {
   $(".op1").on("click", function() {
     $(this).addClass("selected");
     if (
-      $(this)
-        .text()
-        .trim() === answer1.innerText
+      $(this).text().trim() === answer1.innerText
     ) {
       $(this).addClass("correct");
     }
