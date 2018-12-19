@@ -9,7 +9,7 @@ body {
   padding-top: 155px;
 }
 .selected {
-  background-color: green;
+  background-color: rgba(15, 199, 55, 0.637);
 }
 ul > li {
   list-style-type: none;
@@ -231,8 +231,12 @@ h2 {
   width: 200px;
 }
 #story {
-  width: 400px;
-  margin-left: 37%;
+  width: 800px;
+  margin-left: 21%;
+  font-size: 22px;
+  font-family: "Tajawal", sans-serif;
+  color: #126d79;
+
 }
 .field {
   font-size: 25px;
@@ -260,4 +264,7 @@ h2 {
 #stickers {
   width: 200px;
   height: 200px;
+}
+h7{
+  color:red;
 }
