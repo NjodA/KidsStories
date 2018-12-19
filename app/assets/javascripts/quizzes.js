@@ -41,7 +41,7 @@
 //     });
 //     }
 
-$(document).ready(function() {
+$(document).on("turbolinks:load", function() {
   const answer1 = document.querySelector(".answer1");
   const answer2 = document.querySelector(".answer2");
   const answer3 = document.querySelector(".answer3");
@@ -62,9 +62,7 @@ $(document).ready(function() {
   $(".op1").on("click", function() {
     $(this).addClass("selected");
     if (
-      $(this)
-        .text()
-        .trim() === answer1.innerText
+      $(this).text().trim() === answer1.innerText
     ) {
       $(this).addClass("correct");
     }

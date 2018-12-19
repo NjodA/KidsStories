@@ -198,3 +198,11 @@ footer {
   height: 100%;
   transition: all 0.5s;
 }
+h2{
+  width:200px;
+}
+#story{
+width:400px;
+margin-left: 37%;
+
+}
