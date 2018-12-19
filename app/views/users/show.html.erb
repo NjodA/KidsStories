@@ -10,3 +10,8 @@
 <% end %>
 </div>
 </div>
+<% time=0 %>
+<% @user.readings.each do |r| %>
+    <% time+= ((r.updated_at - r.created_at) / 60).round(2) %>
+<% end %>
+<p><%= time %></p>
