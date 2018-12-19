@@ -1,14 +1,21 @@
  <br>
   <br>
 
- <div class="flex1 ">
-
+ <%# <div class="flex1 "> %>
+<div class="flex1">
 
 <% arr=["darkPink","purple","orange","lightBlue","yellow"] %>
 <%c=0 %>
+<%i=0 %>
 <% @stories.each do |story| %>
 
-<div class="panel" onclick="image()" id=<%= story.id %> style="background-image: url(<%= story.image %>)">
+<%c+=1 %>
+<% if arr.length==c %>
+
+<%c=0 %>
+<% end %>
+<%= link_to story, class: "panel-link" do %>
+<div class="panel" id=<%= story.id %> style="background-image: url(<%= story.image %>) ">
 <div class="bg <%= arr[c] %>">
 
 <br>
@@ -16,14 +23,14 @@
 <br>
 <br>
 <br>
+
     <h3> <%= story.title %> </h3>
     <!-- <img class="img1" id=<%=story.id%> onclick="image()" src= > -->
     </div>
     </div>
 
-<%c+=1 %>
-<% if arr.length==c %>
-<%c=0 %>
+
 <% end %>
 <% end %>
+</div>
 </div>

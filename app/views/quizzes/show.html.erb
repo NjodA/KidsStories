@@ -18,7 +18,7 @@
 <br>
 <% end %>
 <p id="counter" hidden><%= @quiz.id %></p>
-<p id="sticker" hidden><%= @quiz.id %></p>
+<p id="sticker" hidden><%= Sticker.find_by(id: @quiz.sticker_id).image %></p>
 
 <button class="complete-quiz answer">تم</button> 
 <button class="refresh answer" onclick="refresh()">إعادة الإختبار</button>

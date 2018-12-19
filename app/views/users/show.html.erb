@@ -1,13 +1,30 @@
    <div class=down>
    <br>
-    <div class="flex1">
+      
 
+<% arr=["darkPink","purple","orange","lightBlue","yellow"] %>
+<%c=0 %>
+<p class=username> مرحباً   <%= @user.name %></p>
+<% if  @user.gender==="ولد" %>
+<%= image_tag "boy.png", class:"boy" %>
+<% else %>
+<%= image_tag "girl.png", class:"boy" %>
+<%end %>
+<hr>
 
-<h2> مرحباً   <%= @user.name %></h2>
-
+<div class="flex1">
 <% @user.stickers.each do |s| %>
- <img src=<%=s.image %> >
+  <% if arr.length==c %>
+<%c=0 %>
 <% end %>
+<div class=" <%= arr[c] %>" id="stickers" >
+ <img class="profileSticker" src=<%=s.image %> >
+
+</div>
+
+ <%c+=1 %>
+<% end %>
+
 </div>
 </div>
 <% time=0 %>
