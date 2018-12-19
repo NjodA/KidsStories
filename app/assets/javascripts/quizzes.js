@@ -41,25 +41,18 @@
 //     });
 //     }
 
-$(document).on("turbolinks:load", function() {
+$(document).on("turbolinks:load", function () {
+
+
   const answer1 = document.querySelector(".answer1");
   const answer2 = document.querySelector(".answer2");
   const answer3 = document.querySelector(".answer3");
   const sticker = document.querySelector("#sticker");
   let button;
 
-  function checkAnswer(answer) {
-    // console.log(answer.innerHTML);
-    // console.log(button);
-    if (button == answer.innerHTML) {
-      swal("Good job!", "You clicked the button!", "success");
-      updateUser(sticker);
-    } else {
-      swal("try again!", "You clicked the button!", "error");
-    }
-  }
 
-  $(".op1").on("click", function() {
+
+  $(".op1").on("click", function () {
     $(this).addClass("selected");
     if (
       $(this).text().trim() === answer1.innerText
@@ -68,7 +61,7 @@ $(document).on("turbolinks:load", function() {
     }
     disable("op1");
   });
-  $(".op2").on("click", function() {
+  $(".op2").on("click", function () {
     $(this).addClass("selected");
     if (
       $(this)
@@ -79,7 +72,7 @@ $(document).on("turbolinks:load", function() {
     }
     disable("op2");
   });
-  $(".op3").on("click", function() {
+  $(".op3").on("click", function () {
     $(this).addClass("selected");
     // console.log(answer3.innerHTML);
     if (
@@ -93,28 +86,42 @@ $(document).on("turbolinks:load", function() {
   });
   function disable(c) {
     const options = document.querySelectorAll(`.${c}`);
-    options.forEach(function(option) {
+    options.forEach(function (option) {
       option.disabled = true;
     });
   }
-  $(".complete-quiz").on("click", function() {
+  $(".complete-quiz").on("click", function () {
+    console.log("ghghg")
     if ($(".correct").length === $(".answers").length) {
       swal({
-        title: "Sweet!",
-        text: "Modal with a custom image.",
-        imageUrl: "https://unsplash.it/400/200",
-        imageWidth: 400,
-        imageHeight: 200,
+        title: "أحسنت لقد حصلت على ملصق",
+        text: "",
+        icon: sticker.innerHTML,
+        imageWidth: 800,
+        imageHeight: 400,
         imageAlt: "Custom image",
-        animation: false
+        animation: false,
+        button: "تم"
       });
+
       fetch(location.pathname + "/complete", {
         method: "POST"
       })
         .then(r => r.json())
-        .then(function(data) {
+        .then(function (data) {
           console.log(data);
         });
+    } else {
+      swal({
+        title: "أعد المحاولة",
+        text: "Modal with a custom image.",
+        imageUrl: "https://1.bp.blogspot.com/-b7pMpYdznyU/WC2bPAKiKeI/AAAAAAAAAk0/tYe0OvAopFAETR7VbxmC4rs5K4NN4sieACLcB/s1600/%25D8%25AD%25D9%2585%25D8%25A7%25D8%25B1%2B%25D8%25AC%25D8%25AD%25D8%25A7.jpg",
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: "Custom image",
+        animation: false,
+        button: "تم"
+      });
     }
   });
   // console.log($("button"));
@@ -140,35 +147,7 @@ $(document).on("turbolinks:load", function() {
   //     checkAnswer(answer3);
   // })
 
-  function responseToJSON(response) {
-    return response.json();
-  }
 
-  function updateUser(sticker_id) {
-    const params = {
-      sticker_id: sticker_id
-    };
 
-    fetch(`/users/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      },
-      body: JSON.stringify(params)
-    })
-      .then(responseToJSON)
-      .then(function(data) {
-        // const showTodoDiv = document.querySelector("#show-todo");
-        // const html = `
-        // <h2>Todo ${id}</h2>
-        // <p>${data.content}</p>
-        // <p>Completed: ${data.completed}</p>
-        // <p>Created at: ${data.created_at}</p>
-        // `;
 
-        // showTodoDiv.innerHTML = html;
-        console.log(data);
-      });
-  }
 });
