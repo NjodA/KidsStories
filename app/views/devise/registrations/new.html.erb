@@ -20,8 +20,9 @@
 
   <div class="field">
    <br>
-  <%= f.radio_button :gender, 'بنت' %> فتاة  
-    <%= f.radio_button :gender, 'ولد' %> فتى <br />
+  
+  <%= f.radio_button :gender, 'بنت' %> <%= image_tag "boy.png", class:"boy" %>
+    <%= f.radio_button :gender, 'ولد' %> <%= image_tag "girl.png",class:"boy"%> <br />
 
   </div>
   <div class="field">
