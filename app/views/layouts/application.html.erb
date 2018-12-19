@@ -9,6 +9,8 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script>
+
     <%# <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -17,24 +19,33 @@
 
   <body>
    <header>
-   <nav class="nava">
-      <button type="button" onclick="login()">دخول</button>
 
-         <%= image_tag "pic1.png" %>
+  
+<nav class="nava">
+  
+      <ul>
+ <%if user_signed_in? %>
+                <li><a><%= link_to "الملف الشخصي ", user_path(current_user) %></a></li>
+                <li><a><%= link_to "تسجيل خروج ", destroy_user_session_path, method: :delete %></a></li>
+              <% else %>
+                <li><a><%= link_to "دخول ", new_user_session_path %></a></li>
+                <li><a><%= link_to " تسجيل جديد ", new_user_registration_path %></a></li>
+              <% end %>
+</ul>
 
-
+         <%#= image_tag "pic1.png" %>
+         <%= link_to image_tag('pic1.png', size: '180x68') ,root_path %>
     </nav>
    </header>
     <div class="devise">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
     </div>
-    <a><%= link_to "Log in ", new_user_session_path %></a>
     <%= yield %>
+
+ 
   </body>
-  <footer>
-&copy; 2018
-  </footer>
+ 
 </html>
 
 

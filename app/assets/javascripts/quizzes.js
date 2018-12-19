@@ -1,7 +1,6 @@
 // // Place all the behaviors and hooks related to the matching controller here.
 // // All this logic will automatically be available in application.js.
 
-
 // $(document).ready(function () {
 //     console.log("ready!");
 // });
@@ -42,106 +41,136 @@
 //     });
 //     }
 
+$(document).ready(function() {
+  const answer1 = document.querySelector(".answer1");
+  const answer2 = document.querySelector(".answer2");
+  const answer3 = document.querySelector(".answer3");
+  const sticker = document.querySelector("#sticker");
+  let button;
 
-$(document).ready(function () {
-
-    const answer1 = document.querySelector(".answer1");
-    const answer2 = document.querySelector(".answer2");
-    const answer3 = document.querySelector(".answer3");
-    const sticker = document.querySelector("#sticker");
-    let button;
-
-    function checkAnswer(answer) {
-        // console.log(answer.innerHTML);
-        // console.log(button);
-        if (button == answer.innerHTML) {
-            swal("Good job!", "You clicked the button!", "success");
-            updateUser(sticker);
-        } else {
-            swal("try again!", "You clicked the button!", "error");
-        }
+  function checkAnswer(answer) {
+    // console.log(answer.innerHTML);
+    // console.log(button);
+    if (button == answer.innerHTML) {
+      swal("Good job!", "You clicked the button!", "success");
+      updateUser(sticker);
+    } else {
+      swal("try again!", "You clicked the button!", "error");
     }
+  }
 
-    $(".complete-quiz").on("click", function () {
-        if ($(".correct").length === $(".answer").length) {
-            fetch(location.pathname + "/complete", {
-                method: "POST"
-            }).then(r => r.json()).then(function (data) {
-                console.log(data);
-            })
-        }
+  $(".op1").on("click", function() {
+    $(this).addClass("selected");
+    if (
+      $(this)
+        .text()
+        .trim() === answer1.innerText
+    ) {
+      $(this).addClass("correct");
+    }
+    disable("op1");
+  });
+  $(".op2").on("click", function() {
+    $(this).addClass("selected");
+    if (
+      $(this)
+        .text()
+        .trim() === answer2.innerText
+    ) {
+      $(this).addClass("correct");
+    }
+    disable("op2");
+  });
+  $(".op3").on("click", function() {
+    $(this).addClass("selected");
+    // console.log(answer3.innerHTML);
+    if (
+      $(this)
+        .text()
+        .trim() === answer3.innerText
+    ) {
+      $(this).addClass("correct");
+    }
+    disable("op3");
+  });
+  function disable(c) {
+    const options = document.querySelectorAll(`.${c}`);
+    options.forEach(function(option) {
+      option.disabled = true;
     });
-
-    $(".op1").on("click", function () {
-        $(this).addClass("selected");
-        if ($(this).text().trim() === answer1.innerText) {
-            $(this).addClass("correct")
-        }
-    })
-    $(".op2").on("click", function () {
-        $(this).addClass("selected");
-        if ($(this).text().trim() === answer2.innerText) {
-            $(this).addClass("correct")
-        }
-    })
-    $(".op3").on("click", function () {
-        $(this).addClass("selected");
-        if ($(this).text().trim() === answer3.innerText) {
-            $(this).addClass("correct")
-        }
-    })
-    // console.log($("button"));
-    // console.log($("p"));
-    // $(".op1").click(function () {
-
-    //     //     console.log("button");
-    //     // console.log("button");
-    //     button = this.innerText;
-    //     console.log("*******", button);
-    //     checkAnswer(answer1);
-    // })
-    // $(".op2").on("click", function () {
-    //     // console.log("button");
-    //     // console.log("button");
-    //     button = this.innerText;
-    //     checkAnswer(answer2);
-    // })
-    // $(".op3").on("click", function () {
-    //     // console.log("button");
-    //     // console.log("button");
-    //     button = this.innerHTML;
-    //     checkAnswer(answer3);
-    // })
-
-    function responseToJSON(response) {
-        return response.json();
+  }
+  $(".complete-quiz").on("click", function() {
+    if ($(".correct").length === $(".answers").length) {
+      swal({
+        title: "Sweet!",
+        text: "Modal with a custom image.",
+        imageUrl: "https://unsplash.it/400/200",
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: "Custom image",
+        animation: false
+      });
+      fetch(location.pathname + "/complete", {
+        method: "POST"
+      })
+        .then(r => r.json())
+        .then(function(data) {
+          console.log(data);
+        });
     }
+  });
+  // console.log($("button"));
+  // console.log($("p"));
+  // $(".op1").click(function () {
 
-    function updateUser(sticker_id) {
-        const params = {
-            sticker_id: sticker_id
-        };
+  //     //     console.log("button");
+  //     // console.log("button");
+  //     button = this.innerText;
+  //     console.log("*******", button);
+  //     checkAnswer(answer1);
+  // })
+  // $(".op2").on("click", function () {
+  //     // console.log("button");
+  //     // console.log("button");
+  //     button = this.innerText;
+  //     checkAnswer(answer2);
+  // })
+  // $(".op3").on("click", function () {
+  //     // console.log("button");
+  //     // console.log("button");
+  //     button = this.innerHTML;
+  //     checkAnswer(answer3);
+  // })
 
-        fetch(`/users/${id}`, {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json"
-            },
-            body: JSON.stringify(params)
-        })
-            .then(responseToJSON)
-            .then(function (data) {
-                // const showTodoDiv = document.querySelector("#show-todo");
-                // const html = `
-                // <h2>Todo ${id}</h2>
-                // <p>${data.content}</p>
-                // <p>Completed: ${data.completed}</p>
-                // <p>Created at: ${data.created_at}</p>
-                // `;
+  function responseToJSON(response) {
+    return response.json();
+  }
 
-                // showTodoDiv.innerHTML = html;
-                console.log(data);
-            });
-    }
+  function updateUser(sticker_id) {
+    const params = {
+      sticker_id: sticker_id
+    };
+
+    fetch(`/users/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify(params)
+    })
+      .then(responseToJSON)
+      .then(function(data) {
+        // const showTodoDiv = document.querySelector("#show-todo");
+        // const html = `
+        // <h2>Todo ${id}</h2>
+        // <p>${data.content}</p>
+        // <p>Completed: ${data.completed}</p>
+        // <p>Created at: ${data.created_at}</p>
+        // `;
+
+        // showTodoDiv.innerHTML = html;
+        console.log(data);
+      });
+  }
 });

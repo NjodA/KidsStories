@@ -1,0 +1,9 @@
+    
+
+
+<h2> <%= @user.name %> مرحبا </h2>
+
+<% @user.stickers.each do |s| %>
+ <img src=<%=s.image %> >
+<% end %>
+

@@ -32,6 +32,9 @@ function level3(){
 }
 function image(){
     // console.log(this.id);
-    const image=document.querySelector(".img");
+const image=document.querySelector(".panel");
     location.href = `/stories/${image.id}`;   
+}
+function refresh(){
+    location.reload();
 }

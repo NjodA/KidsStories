@@ -6,7 +6,13 @@ body {
   font-family: "Tajawal", sans-serif;
 
   margin: 0;
-  /* padding-top: 120px; */
+  padding-top: 155px;
+}
+.selected {
+  background-color: green;
+}
+ul > li {
+  list-style-type: none;
 }
 .devise {
   position: absolute;
@@ -17,6 +23,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  font-family: "Baloo Bhaijaan", cursive;
+  color: #126d79;
 }
 .nava {
   position: fixed;
@@ -41,19 +49,21 @@ body {
 }
 
 nav img {
-  width: 240px;
-  height: 240px;
+  width: 220px;
+  height: 220px;
   position: absolute;
-  top: -35px;
+  top: -27px;
   left: 50%;
-  margin-left: -150px;
+  margin-left: -110px;
 }
 
 nav a {
   color: #f8f8ff;
   margin-left: 20px;
 }
-
+a{
+  text-decoration: none;
+}
 .landing-page {
   background-attachment: fixed;
   background-image: url(https://clip2art.com/images/library-clipart-child-book-20.jpg);
@@ -76,6 +86,7 @@ section {
 img {
   width: 550px;
   height: 500px;
+  border-radius: 50%;
 }
 
 .landing-page button {
@@ -99,19 +110,91 @@ img {
 .landing-page button:hover {
   opacity: 1;
 }
+.panel {
+  width: 300px;
+  height: 300px;
 
+  text-align: center;
+  width: 300px;
+}
+.blue {
+  background-color: #126d79;
+}
+.darkPink {
+  background-color: rgb(188, 40, 54);
+}
+.purple {
+  background-color: rgb(90, 53, 148);
+}
+.orange {
+  background-color: rgb(231, 103, 40);
+}
+.lightBlue {
+  background-color: rgb(111, 174, 207);
+}
+.yellow {
+  background-color: rgb(238, 241, 11);
+}
 footer {
   background-color: #126d79;
-  height: 100px;
+  /* height: 100px;
   color: white;
   font-size: 30px;
-  text-align: center;
   font-family: "Tajawal", sans-serif;
+  width:100%;
+  display: fixed; 
+  bottom: 0px;
+  text-align: center;  */
+  color: #faefef;
+  margin-top: 10px;
+  padding-left: 60px;
+  padding: 10px;
+  text-align: center;
+  font-size: 22px;
+  /* position: fixed; */
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 .down {
-  margin-top: 150px;
+ 
   text-align: center;
 }
 .answer {
   width: 200px;
+}
+.flex h3 {
+  font-size: 44px;
+}
+.panel {
+  width: 300px;
+  height: 300px;
+  /* background-color: rgba(255, 0, 0, 0.2); */
+  text-align: center;
+  width: 300px;
+  position: relative;
+}
+
+.panel:hover .bg {
+  /* background-image: url(http://fillmurray.com/500/500); */
+  opacity: 0;
+  /* background-size: cover; */
+}
+.flex {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.flex1 {
+  display: flex;
+  flex-direction: row-reverse;
+
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
 }
