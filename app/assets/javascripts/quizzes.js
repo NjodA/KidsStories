@@ -41,38 +41,39 @@
 //     });
 //     }
 
-$(document).on("turbolinks:load", function () {
-
-
+$(document).on("turbolinks:load", function() {
   const answer1 = document.querySelector(".answer1");
   const answer2 = document.querySelector(".answer2");
   const answer3 = document.querySelector(".answer3");
   const sticker = document.querySelector("#sticker");
   let button;
 
-
-
-  $(".op1").on("click", function () {
+  $(".op1").on("click", function() {
     $(this).addClass("selected");
     if (
-      $(this).text().trim() === answer1.innerText
+      $(this)
+        .text()
+        .trim() === answer1.innerText
     ) {
       $(this).addClass("correct");
     }
     disable("op1");
   });
-  $(".op2").on("click", function () {
+  $(".op2").on("click", function() {
     $(this).addClass("selected");
     if (
-      $(this)
-        .text()
-        .trim() === answer2.innerText
+      // TODO: THIS IS NOT GOOD, JUST TO PROVE THE IDEA
+      answer2.innerText.includes(
+        $(this)
+          .text()
+          .trim()
+      )
     ) {
       $(this).addClass("correct");
     }
     disable("op2");
   });
-  $(".op3").on("click", function () {
+  $(".op3").on("click", function() {
     $(this).addClass("selected");
     // console.log(answer3.innerHTML);
     if (
@@ -86,12 +87,12 @@ $(document).on("turbolinks:load", function () {
   });
   function disable(c) {
     const options = document.querySelectorAll(`.${c}`);
-    options.forEach(function (option) {
+    options.forEach(function(option) {
       option.disabled = true;
     });
   }
-  $(".complete-quiz").on("click", function () {
-    console.log("ghghg")
+  $(".complete-quiz").on("click", function() {
+    console.log("ghghg");
     if ($(".correct").length === $(".answers").length) {
       swal({
         title: "أحسنت لقد حصلت على ملصق",
@@ -108,17 +109,15 @@ $(document).on("turbolinks:load", function () {
         method: "POST"
       })
         .then(r => r.json())
-        .then(function (data) {
+        .then(function(data) {
           console.log(data);
         });
     } else {
-      
-        swal({
-          text: "أعد المحاولة",
-          icon:"error",
-          button:"تم"
-        })
-     
+      swal({
+        text: "أعد المحاولة",
+        icon: "error",
+        button: "تم"
+      });
     }
   });
   // console.log($("button"));
@@ -143,8 +142,4 @@ $(document).on("turbolinks:load", function () {
   //     button = this.innerHTML;
   //     checkAnswer(answer3);
   // })
-
-
-
-
 });
