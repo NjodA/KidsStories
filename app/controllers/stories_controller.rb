@@ -11,6 +11,7 @@ class StoriesController < ApplicationController
 
   def show
     @story = Story.find_by(id: params[:id])
+    @reading = @story.readings.create user_id: current_user.id
   end
 
   def new
@@ -30,6 +31,29 @@ class StoriesController < ApplicationController
     redirect_to story
   end
 
+  def finish
+    reading = Reading.find_by id: params[:id]
+    reading.time_taken = Time.now - reading.created_at
+    reading.save
+    redirect_to quiz_path(reading.story.quiz)
+    # reading_time = Reading.new
+    # count = Reading.time_taken >> how to link it to the story_id  
+    # time_taken = 
+    # reading_time 
+    # user_id >> current user
+    # story id >> params
+    # count 
+    # count = Story.min.to_s
+
+    #  reading = Reading.new
+    #  reading.user_id = current_user.id
+    # reading.story_id = params[:story_id]
+    # reading.time = data.count
+    # reading.save
+
+    redirect_to 
+    
+  end
   def destory
   end
 end

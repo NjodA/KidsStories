@@ -17,5 +17,7 @@
     <% end %>
 <% end %>
 <br>
-<button><%= link_to 'ابدأ التحدي',  quiz_path(@story.quiz) %></button>
+<%= link_to "Finish!", "/readings/#{@reading.id}/finish" %>
+<button><%#= link_to 'ابدأ التحدي',  quiz_path(@story.quiz) %></button>
+<button><%#= link_to 'Done! ',  method: :post %></button>
 </div>
