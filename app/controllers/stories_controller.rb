@@ -51,7 +51,7 @@ class StoriesController < ApplicationController
     # reading.time = data.count
     # reading.save
 
-    redirect_to 
+  
     
   end
   def destory

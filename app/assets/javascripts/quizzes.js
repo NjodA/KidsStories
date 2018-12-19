@@ -21,7 +21,7 @@
 //         if (button == answer.innerHTML) {
 //             swal("Good job!", "You clicked the button!", "success");
 //         } else {
-//             swal("Good job!", "You clicked the button!", "error");
+//             swal("أعد المحاولة", "You clicked the button!", "error");
 //         }
 //         debugger;
 //     }
@@ -112,16 +112,9 @@ $(document).on("turbolinks:load", function () {
           console.log(data);
         });
     } else {
-      swal({
-        title: "أعد المحاولة",
-        text: "Modal with a custom image.",
-        imageUrl: "https://1.bp.blogspot.com/-b7pMpYdznyU/WC2bPAKiKeI/AAAAAAAAAk0/tYe0OvAopFAETR7VbxmC4rs5K4NN4sieACLcB/s1600/%25D8%25AD%25D9%2585%25D8%25A7%25D8%25B1%2B%25D8%25AC%25D8%25AD%25D8%25A7.jpg",
-        imageWidth: 400,
-        imageHeight: 200,
-        imageAlt: "Custom image",
-        animation: false,
-        button: "تم"
-      });
+      
+        swal("أعد المحاولة", "", "error");
+     
     }
   });
   // console.log($("button"));
