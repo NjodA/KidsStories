@@ -26,15 +26,15 @@
       <ul>
  <%if user_signed_in? %>
 
- <li><a><%= link_to "الملف الشخصي ", user_path(current_user) %></a></li>
-    
-                <li><a><%= link_to "تسجيل خروج ", destroy_user_session_path, method: :delete %></a></li>
+ <li><%= link_to "الملف الشخصي ", user_path(current_user) %></li>
+
+  <li><%= link_to "تسجيل خروج ", destroy_user_session_path, method: :delete %></li>
             
-              <% else %>
-                
-                 <button onclick=login()>دخول</button>
-          
-              <% end %>
+  <% else %>
+    
+      <button onclick=login()>دخول</button>
+
+  <% end %>
 </ul>
 
          <%#= image_tag "pic1.png" %>

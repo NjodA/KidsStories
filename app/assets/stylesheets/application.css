@@ -65,6 +65,34 @@ nav a {
 a {
   text-decoration: none;
 }
+
+nav ul {
+  position: absolute;
+  right: 61px;
+  top: 60px;
+  display: flex;
+}
+nav ul li a {
+  display: inline-block;
+  height: 38px;
+  padding: 0 20px;
+  width: 170px;
+  color: #555;
+  text-align: center;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  /* white-space: nowrap; */
+  /* background-color: transparent; */
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  box-sizing: border-box;
+  background-color: white;
+  font-size: 15px;
+}
 .landing-page {
   background-attachment: fixed;
   background-image: url(https://clip2art.com/images/library-clipart-child-book-20.jpg);
@@ -216,4 +244,20 @@ h2 {
 .panel-link {
   color: black;
   width: 30%;
+}
+
+.profileSticker {
+  width: 150px;
+  height: 150px;
+  /* border: solid 20px red; */
+  border-radius: 0%;
+  margin-top: 20px;
+}
+.username {
+  font-size: 37px;
+  text-align: right;
+}
+#stickers {
+  width: 200px;
+  height: 200px;
 }
