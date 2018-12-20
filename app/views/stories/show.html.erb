@@ -1,8 +1,15 @@
  <div class="down ">
 <br>
 <br>
+<br>
 
- <h1><%= @story.title %></h1> <br>
+ <h1><%= @story.title %></h1> <% if @story.level==="1" %>
+<img onclick="level1()" class=boy1 src=https://cdn1.iconfinder.com/data/icons/ui-color/512/Untitled-21-512.png>
+ <% elsif @story.level==="2" %>
+ <img onclick="level2()" class=boy1 src=https://cdn1.iconfinder.com/data/icons/ui-color/512/Untitled-21-512.png>
+ <% elsif @story.level==="3" %>
+ <img onclick="level3()" class=boy1 src=https://cdn1.iconfinder.com/data/icons/ui-color/512/Untitled-21-512.png>
+  <% end %><br>
  <img src=<%= @story.image %>> <br>
  <h7><%= @story.min %> دقائق للقراءة </h7>
  <p id="story"><%= @story.body %> <br></p>
@@ -17,6 +24,7 @@
 <% end %>
 <br>
 <br>
+<%if user_signed_in? %>
 <button><%= link_to "!ابدأ التحدي", "/readings/#{@reading.id}/finish" %> </button>
-
+<%end %>
 </div>

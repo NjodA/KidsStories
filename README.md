@@ -1,24 +1,39 @@
-# README
+# I Read Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description of tech/links
 
-Things you may want to cover:
+It’s a website for kids to learn reading. It can be done by reading and listening to a story. Each story presents a level, to pass it you should answer questions about the story itself. After answering correctly you will gain a sticker and will be kept in your account  and you can gather it and print it.
 
-* Ruby version
+## Technology used
 
-* System dependencies
+- RubyOnRails.
+- Javascript.
+- Ajax.
+- CSS.
+- JQuery.
 
-* Configuration
+## Thought process/approach
 
-* Database creation
+Think about the Idea,logic and then build 6 models then coding after that the styling.
 
-* Database initialization
+## Link to the project
 
-* How to run the test suite
+[I Read Project](https://gluten-free-project.herokuapp.com/)
 
-* Services (job queues, cache servers, search engines, etc.)
+## What's next?
 
-* Deployment instructions
+- Make it in many Language.
+- Create audio and video for each story.
+- Create a tracking system to the paraents.
+- Create a a rateing for the stories. 
+- Build a Mobile Application.
 
-* ...
+
+## Credits
+
+- Google Fonts.
+- Skeleton.
+- Sweet Alert2.
+- Heroku.
+- Jack Jeffress.
+- Moath Althawad.

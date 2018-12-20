@@ -270,3 +270,11 @@ h7 {
 h1 {
   color: #126d79;
 }
+.boy1 {
+  width: 64px;
+  height: 64px;
+  position:absolute;
+  right: 1200px;
+  bottom: 500px;
+  cursor: pointer;
+ }

@@ -15,7 +15,7 @@
 <%= image_tag "girl.png", class:"boy" %>
 <%end %>
 <hr>
-
+<% time='%.2f' % [(time * 100).round / 100.0]%>
 <h3 class=down> تهانينا لقد أنهيت <%= time %>دقيقة من القراءة </h3>
 <div class="flex1">
 <% @user.stickers.each do |s| %>

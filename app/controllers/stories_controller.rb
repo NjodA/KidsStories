@@ -11,7 +11,9 @@ class StoriesController < ApplicationController
 
   def show
     @story = Story.find_by(id: params[:id])
+    if user_signed_in?
     @reading = @story.readings.create user_id: current_user.id
+    end
   end
 
   def new
